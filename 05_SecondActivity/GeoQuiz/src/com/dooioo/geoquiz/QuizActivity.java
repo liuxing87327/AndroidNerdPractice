@@ -1,6 +1,7 @@
 package com.dooioo.geoquiz;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -9,14 +10,22 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class QuizActivity extends Activity {
 
     private static final String TAG = "QuizActivity";
     private static final String KEY_INDEX = "index";
+    private static final String KEY_ISCHEATER = "isCheater";
+
+    private static Map<Integer, Boolean> INDEX_CHEATER = new HashMap<>();
 
     private Button mTrueButton;
     private Button mFalseButton;
     private Button mPrevButton;
+    private Button cheatButton;
+
     private Button mNextButton;
 
     private ImageButton prevImgButton;
@@ -35,6 +44,18 @@ public class QuizActivity extends Activity {
 
     private int mCurrentIndex = 0;
 
+    private boolean isCheater;
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (data == null) {
+            return;
+        }
+        isCheater = data.getBooleanExtra(CheatActivity.EXTRA_ANSWER_SHOWN, false);
+        INDEX_CHEATER.put(mCurrentIndex, isCheater);
+        System.out.println(isCheater);
+    }
+
     /**
      * Called when the activity is first created.
      */
@@ -43,13 +64,32 @@ public class QuizActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
 
+        isCheater = false;
+
         mQuestionTextView = (TextView) findViewById(R.id.question_text_view);
 
         if(savedInstanceState != null){
             mCurrentIndex = savedInstanceState.getInt(KEY_INDEX);
+            isCheater = savedInstanceState.getBoolean(KEY_ISCHEATER, false);
         }
 
         updateQuestion();
+
+        // 监听作弊按钮
+        cheatButton = (Button)findViewById(R.id.cheat_button);
+        cheatButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Log.d(TAG, "cheatButton onClick");
+                // 启动作弊的activity
+                Intent i = new Intent(QuizActivity.this, CheatActivity.class);
+                boolean answerIsTrue = mQuestionBank[mCurrentIndex].ismTrueQuestion();
+                // 值传递，key-value结构
+                i.putExtra(CheatActivity.EXTRA_ANSWER_IS_TRUE, answerIsTrue);
+                startActivity(i);
+                startActivityForResult(i, 0);
+            }
+        });
 
         // 监听 true 点击
         mTrueButton = (Button)findViewById(R.id.true_button);
@@ -78,6 +118,8 @@ public class QuizActivity extends Activity {
                 if(mCurrentIndex < 0) {
                     mCurrentIndex = mQuestionBank.length - 1;
                 }
+
+                initCheater();
                 updateQuestion();
             }
         });
@@ -88,6 +130,8 @@ public class QuizActivity extends Activity {
             @Override
             public void onClick(View v){
                 mCurrentIndex = (mCurrentIndex + 1) % mQuestionBank.length;
+
+                initCheater();
                 updateQuestion();
             }
         });
@@ -101,6 +145,8 @@ public class QuizActivity extends Activity {
                 if(mCurrentIndex < 0) {
                     mCurrentIndex = mQuestionBank.length - 1;
                 }
+
+                initCheater();
                 updateQuestion();
             }
         });
@@ -120,6 +166,7 @@ public class QuizActivity extends Activity {
             @Override
             public void onClick(View v){
                 mCurrentIndex = (mCurrentIndex + 1) % mQuestionBank.length;
+                initCheater();
                 updateQuestion();
                 showMessage(R.string.next_button);
             }
@@ -133,6 +180,7 @@ public class QuizActivity extends Activity {
         super.onSaveInstanceState(onSaveInstanceState);
         Log.d(TAG, "onSaveInstanceState");
         onSaveInstanceState.putInt(KEY_INDEX, mCurrentIndex);
+        onSaveInstanceState.putBoolean(KEY_ISCHEATER, isCheater);
     }
 
     @Override
@@ -180,11 +228,34 @@ public class QuizActivity extends Activity {
     private void checkAnswer(boolean userPressedTrue){
         boolean answerIsTrue = mQuestionBank[mCurrentIndex].ismTrueQuestion();
 
-        if (userPressedTrue == answerIsTrue) {
-            this.showMessage(R.string.correct_toast);
+        int  messageResId = 0;
+
+        if (isCheater) {
+            if (userPressedTrue == answerIsTrue) {
+                messageResId = R.string.judgment_toast;
+            } else {
+                messageResId = R.string.incorrect_judgement_toast;
+            }
         } else {
-            this.showMessage(R.string.incorrect_toast);
+            if (userPressedTrue == answerIsTrue) {
+                messageResId = R.string.correct_toast;
+            } else {
+                messageResId = R.string.incorrect_toast;
+            }
         }
+
+        showMessage(messageResId);
+    }
+
+    /**
+     * 切换题目时，设置初始作弊状态
+     */
+    private void initCheater() {
+        if (INDEX_CHEATER.get(mCurrentIndex) == null){
+            INDEX_CHEATER.put(mCurrentIndex, false);
+        }
+
+        isCheater = INDEX_CHEATER.get(mCurrentIndex);
     }
 
     private void showMessage(int resId){
