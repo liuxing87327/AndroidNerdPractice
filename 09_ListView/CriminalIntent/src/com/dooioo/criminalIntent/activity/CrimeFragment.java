@@ -1,6 +1,7 @@
 package com.dooioo.criminalIntent.activity;
 
 import android.app.Fragment;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.Editable;
@@ -107,20 +108,20 @@ public class CrimeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "onClick");
-
-                new Thread(new Runnable(){
-                    @Override
-                    public void run() {
-                        try {
-                            String body = queryApi();
-                            crime.setApiBody(body);
-                            handler.post(runnable);
-                            Log.d(TAG, body);
-                        } catch (Exception e) {
-                            Log.d(TAG, e.getMessage());
-                        }
-                    }
-                }).start();
+                new EmployeeTask(apiView).execute();
+//                new Thread(new Runnable(){
+//                    @Override
+//                    public void run() {
+//                        try {
+//                            String body = queryApi();
+//                            crime.setApiBody(body);
+//                            handler.post(runnable);
+//                            Log.d(TAG, body);
+//                        } catch (Exception e) {
+//                            Log.d(TAG, e.getMessage());
+//                        }
+//                    }
+//                }).start();
             }
         });
     }
@@ -159,5 +160,25 @@ public class CrimeFragment extends Fragment {
         }
 
     };
+
+    private class EmployeeTask extends AsyncTask<Void, Void, String> {
+
+        private EditText apiView;
+
+        public EmployeeTask(EditText apiView){
+            this.apiView = apiView;
+        }
+
+        @Override
+        protected String doInBackground(Void... params) {
+            return queryApi();
+        }
+
+        @Override
+        protected void onPostExecute(String result) {
+            apiView.setText(result);
+        }
+
+    }
 
 }
