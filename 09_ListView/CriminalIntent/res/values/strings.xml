@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">CriminalIntent</string>
+    <string name="app_crimeListActivity">app_crimeListActivity</string>
+    <string name="app_employeeListActivity">app_employeeListActivity</string>
+    <string name="app_crimeActivity">app_crimeActivity</string>
+    <string name="app_name">CrimeActivity</string>
     <string name="title_activity_crime">CrimeActivity</string>
     <string name="crime_title_hint">请输入一个标题</string>
     <string name="crime_title_label">标题</string>
     <string name="crime_details_label">详细信息</string>
     <string name="crime_solved_label">已解决？</string>
     <string name="crime_title">Crimes</string>
+    <string name="employee_title">员工列表</string>
 </resources>

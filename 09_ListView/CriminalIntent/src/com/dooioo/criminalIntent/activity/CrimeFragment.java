@@ -11,8 +11,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
+import com.dooioo.common.utils.HttpUtils;
 import com.dooioo.criminalIntent.R;
 import com.dooioo.criminalIntent.model.Crime;
+import com.dooioo.criminalIntent.model.Employee;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -23,6 +28,9 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.params.HttpConnectionParams;
 import org.apache.http.util.EntityUtils;
 import org.joda.time.DateTime;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 功能说明：CrimeFragment
@@ -37,21 +45,15 @@ public class CrimeFragment extends Fragment {
     private EditText titleField;
     private Button dateButton;
     private CheckBox solvedCheckBox;
-
     private Button queryButton;
 
-    private EditText apiView;
-
-    private Handler handler = null;
+    private ListView employeeList;
 
     private HttpClient httpClient = new DefaultHttpClient();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //创建属于主线程的handler
-        handler = new Handler();
-
         crime = new Crime();
     }
 
@@ -93,7 +95,7 @@ public class CrimeFragment extends Fragment {
         dateButton.setText(DateTime.now().toString("yyy-MM-dd HH:mm:ss"));
         dateButton.setEnabled(false);
 
-        apiView = (EditText) v.findViewById(R.id.apiView);
+        employeeList = (ListView) v.findViewById(R.id.listView);
 
         solvedCheckBox = (CheckBox) v.findViewById(R.id.crime_solved);
         solvedCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -108,20 +110,7 @@ public class CrimeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "onClick");
-                new EmployeeTask(apiView).execute();
-//                new Thread(new Runnable(){
-//                    @Override
-//                    public void run() {
-//                        try {
-//                            String body = queryApi();
-//                            crime.setApiBody(body);
-//                            handler.post(runnable);
-//                            Log.d(TAG, body);
-//                        } catch (Exception e) {
-//                            Log.d(TAG, e.getMessage());
-//                        }
-//                    }
-//                }).start();
+                new EmployeeTask(employeeList).execute();
             }
         });
     }
@@ -152,31 +141,33 @@ public class CrimeFragment extends Fragment {
         return "";
     }
 
-    // 构建Runnable对象，在runnable中更新界面
-    Runnable runnable = new Runnable() {
-        @Override
-        public void run() {
-            apiView.setText("the api body is:" + crime.getApiBody());
-        }
-
-    };
-
     private class EmployeeTask extends AsyncTask<Void, Void, String> {
 
-        private EditText apiView;
+        private ListView employeeList;
+        private List<Employee> employees;
 
-        public EmployeeTask(EditText apiView){
-            this.apiView = apiView;
+        public EmployeeTask(ListView employeeList) {
+            this.employeeList = employeeList;
         }
 
         @Override
         protected String doInBackground(Void... params) {
-            return queryApi();
+            employees = new ArrayList<>();
+
+            String body = HttpUtils.doGet("http://spring87327.duapp.com/api/v1/employee");
+            System.out.println(body);
+            if (body != null && !"".equals(body)) {
+                JSONObject paginate = JSON.parseObject(body);
+                JSONArray pageList = paginate.getJSONObject("paginate").getJSONArray("pageList");
+                employees = JSON.parseArray(pageList.toJSONString(), Employee.class);
+            }
+
+            return null;
         }
 
         @Override
         protected void onPostExecute(String result) {
-            apiView.setText(result);
+            employeeList.setAdapter(new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, employees));
         }
 
     }
