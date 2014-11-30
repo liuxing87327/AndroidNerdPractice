@@ -14,6 +14,7 @@ public class Employee {
     private String orgName;
     private String status;
     private String position;
+    private Long createdAt;
 
     public Employee() {
         id = UUID.randomUUID();
@@ -21,7 +22,7 @@ public class Employee {
 
     @Override
     public String toString() {
-        return this.userName + "-" + this.orgName;
+        return this.userCode + "-" + this.userName + "-" + this.orgName + "-" + this.position + "-" + "-" + this.status;
     }
 
     public UUID getId() {
@@ -70,5 +71,13 @@ public class Employee {
 
     public void setPosition(String position) {
         this.position = position;
+    }
+
+    public Long getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Long createdAt) {
+        this.createdAt = createdAt;
     }
 }

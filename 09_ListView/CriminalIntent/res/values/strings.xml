@@ -3,12 +3,23 @@
     <string name="app_crimeListActivity">app_crimeListActivity</string>
     <string name="app_employeeListActivity">app_employeeListActivity</string>
     <string name="app_crimeActivity">app_crimeActivity</string>
-    <string name="app_name">CrimeActivity</string>
+
+    <string name="app_employee">员工列表</string>
+    <string name="app_employee_detail">员工详情</string>
+    <string name="app_employee_edit">信息编辑</string>
+
+    <string name="app_name">员工管理</string>
     <string name="title_activity_crime">CrimeActivity</string>
-    <string name="crime_title_hint">请输入一个标题</string>
+    <string name="crime_title_hint">请输入关键字</string>
     <string name="crime_title_label">标题</string>
-    <string name="crime_details_label">详细信息</string>
+    <string name="crime_details_label">时间</string>
     <string name="crime_solved_label">已解决？</string>
     <string name="crime_title">Crimes</string>
     <string name="employee_title">员工列表</string>
+
+    <string name="employee_dateFrom">开始时间</string>
+    <string name="employee_dateTo">结束时间</string>
+
+    <string name="status_prompt">请选择状态</string>
+    <string name="app_employee_add">新增员工</string>
 </resources>

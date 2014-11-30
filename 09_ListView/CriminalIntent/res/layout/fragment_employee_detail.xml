@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent" android:weightSum="1" style="@style/BadTheme">
+
+    <LinearLayout android:layout_marginTop="10dp"
+                  android:layout_width="fill_parent"
+                  android:layout_height="wrap_content">
+
+        <TextView android:layout_width="wrap_content"
+                  android:layout_height="match_parent"
+                  android:layout_marginLeft="10dp"
+                  android:text="工号："/>
+
+        <TextView android:id="@+id/userCode"
+                  android:layout_width="wrap_content"
+                  android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="fill_parent"
+                  android:layout_height="wrap_content">
+
+        <TextView android:layout_width="wrap_content"
+                  android:layout_height="match_parent"
+                  android:layout_marginLeft="10dp"
+                  android:text="姓名："/>
+
+        <TextView android:id="@+id/userName"
+                  android:layout_width="wrap_content"
+                  android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="fill_parent"
+                  android:layout_height="wrap_content">
+
+        <TextView android:layout_width="wrap_content"
+                  android:layout_height="match_parent"
+                  android:layout_marginLeft="10dp"
+                  android:text="部门："/>
+
+        <TextView android:id="@+id/orgName"
+                  android:layout_width="wrap_content"
+                  android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="fill_parent"
+                  android:layout_height="wrap_content">
+
+        <TextView android:layout_width="wrap_content"
+                  android:layout_height="match_parent"
+                  android:layout_marginLeft="10dp"
+                  android:text="岗位："/>
+
+        <TextView android:id="@+id/position"
+                  android:layout_width="wrap_content"
+                  android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="fill_parent"
+                  android:layout_height="wrap_content">
+
+        <TextView android:layout_width="wrap_content"
+                  android:layout_height="match_parent"
+                  android:layout_marginLeft="10dp"
+                  android:text="状态："/>
+
+        <TextView android:id="@+id/status"
+                  android:layout_width="wrap_content"
+                  android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="fill_parent"
+                  android:layout_height="wrap_content">
+
+        <TextView android:layout_width="wrap_content"
+                  android:layout_height="match_parent"
+                  android:layout_marginLeft="10dp"
+                  android:text="入职日期："/>
+
+        <TextView android:id="@+id/createdAt"
+                  android:layout_width="wrap_content"
+                  android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="fill_parent"
+                  android:layout_height="wrap_content">
+
+        <Button android:id="@+id/edit" android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="编辑" android:layout_marginLeft="5dp" android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"/>
+
+    </LinearLayout>
+
+</LinearLayout>
