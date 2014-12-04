@@ -139,6 +139,7 @@ public class HttpUtils {
 
         try {
             if (requestParams != null && requestParams.size() > 0) {
+                requestParams.add(new BasicNameValuePair("_method", "post"));
                 HttpEntity httpEntity = new UrlEncodedFormEntity(requestParams, ENCODE);
                 put.setEntity(httpEntity);
             }

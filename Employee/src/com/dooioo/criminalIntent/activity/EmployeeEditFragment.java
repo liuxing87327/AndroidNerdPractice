@@ -190,7 +190,6 @@ public class EmployeeEditFragment extends Fragment {
             requestParams.put("orgName", employee.getOrgName());
             requestParams.put("position", employee.getPosition());
             requestParams.put("status", employee.getStatus());
-            requestParams.put("_method", "post");
             requestParams.put("createdAt", new DateTime(employee.getCreatedAt()).toString("yyyy-MM-dd"));
 
             String requestUrl = "http://spring87327.duapp.com/api/v1/employee/" + employee.getUserCode();
