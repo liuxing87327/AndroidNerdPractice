@@ -9,6 +9,7 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
+import org.apache.http.client.methods.HttpPut;
 import org.apache.http.client.params.CookiePolicy;
 import org.apache.http.client.params.HttpClientParams;
 import org.apache.http.client.utils.URLEncodedUtils;
@@ -115,6 +116,47 @@ public class HttpUtils {
 
         return "";
     }
+
+    /**
+     * POST请求
+     * @param requestUrl
+     * @param params
+     * @return
+     */
+    public static String doPut(String requestUrl, Map<String, String> params) {
+        HttpPut put = new HttpPut(requestUrl);
+        put.setHeader("Content-Type", "application/x-www-form-urlencoded;charset=UTF-8");
+        put.setHeader("Accept-Language", "zh-CN");
+        put.setHeader("Accept-Encoding", "deflate");
+        put.setHeader("User-Agent", HTTP_AGENT);
+        put.setHeader("Connection", "close");
+
+        HttpClientParams.setCookiePolicy(httpClient.getParams(), CookiePolicy.BROWSER_COMPATIBILITY);
+        HttpConnectionParams.setConnectionTimeout(httpClient.getParams(), 10000);
+        HttpConnectionParams.setSoTimeout(httpClient.getParams(), 30000);
+
+        List<NameValuePair> requestParams = buildNameValuePairs(params);
+
+        try {
+            if (requestParams != null && requestParams.size() > 0) {
+                HttpEntity httpEntity = new UrlEncodedFormEntity(requestParams, ENCODE);
+                put.setEntity(httpEntity);
+            }
+
+            HttpResponse response = httpClient.execute(put);
+            int statusCode = response.getStatusLine().getStatusCode();
+            if (statusCode == 200) {
+                HttpEntity entity = response.getEntity();
+                return EntityUtils.toString(entity, ENCODE);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            Log.d(TAG, e.getMessage(), e);
+        }
+
+        return "";
+    }
+
 
     private static String buildParam(Map<String, String> params){
         if (params == null) {

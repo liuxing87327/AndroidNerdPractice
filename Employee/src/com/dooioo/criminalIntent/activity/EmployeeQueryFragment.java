@@ -18,6 +18,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.dooioo.common.utils.HttpUtils;
 import com.dooioo.criminalIntent.R;
 import com.dooioo.criminalIntent.model.Employee;
+import com.dooioo.criminalIntent.widget.ListViewAdapter;
 import org.joda.time.DateTime;
 
 import java.util.*;
@@ -126,6 +127,7 @@ public class EmployeeQueryFragment extends Fragment {
                 startActivity(intent);
             }
         });
+
     }
 
     private void expressItemClick(int postion){
@@ -145,19 +147,17 @@ public class EmployeeQueryFragment extends Fragment {
         String keywordValue = keyword.getText().toString();
         String dateFromValue = dateFrom.getText().toString();
         String dateToValue = dateTo.getText().toString();
-        new EmployeeTask(employeeList, statusValue, keywordValue, dateFromValue, dateToValue).execute();
+        new EmployeeTask(statusValue, keywordValue, dateFromValue, dateToValue).execute();
     }
 
     private class EmployeeTask extends AsyncTask<Void, Void, String> {
 
-        private ListView employeeList;
         private String statusValue;
         private String keywordValue;
         private String dateFromValue;
         private String dateToValue;
 
-        public EmployeeTask(ListView employeeList, String statusValue, String keywordValue, String dateFromValue, String dateToValue) {
-            this.employeeList = employeeList;
+        public EmployeeTask(String statusValue, String keywordValue, String dateFromValue, String dateToValue) {
             this.statusValue = statusValue;
             this.keywordValue = keywordValue;
             this.dateFromValue = dateFromValue;
@@ -199,7 +199,14 @@ public class EmployeeQueryFragment extends Fragment {
 
         @Override
         protected void onPostExecute(String result) {
-            employeeList.setAdapter(new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, rEmployees));
+//            employeeList.setAdapter(new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, rEmployees));
+            //注意SimpleAdapter适配器用法
+//            ArrayAdapter adapter = new ArrayAdapter(getActivity(), rEmployees,
+//                    R.layout.fragment_employee_list,
+//                    new String[]{"userCode", "userName", "picture"},
+//                    new int[]{R.id.userCode, R.id.userName, R.id.picture});
+            ListViewAdapter listViewAdapter = new ListViewAdapter(getActivity(), rEmployees); //创建适配器
+            employeeList.setAdapter(listViewAdapter);
         }
     }
 

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_alignStart="@+id/status"
+        android:id="@+id/employeeList"
+        android:layout_marginLeft="5dp">
+
+    <LinearLayout android:id="@+id/LinearLayout_userCode"
+                  android:orientation="vertical"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content">
+
+        <TextView android:id="@+id/userCode"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:textColor="#16CCDD"
+                  android:textSize="22sp" />
+
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/LinearLayout_userName"
+                  android:layout_alignParentLeft="true"
+                  android:layout_below="@+id/LinearLayout_userCode"
+                  android:orientation="vertical"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content">
+
+        <TextView android:id="@+id/userName"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:textColor="#666666"
+                  android:textSize="16sp" />
+
+        <TextView android:id="@+id/orgName"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:textColor="#666666"
+                  android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <LinearLayout android:layout_below="@+id/LinearLayout_userCode"
+                  android:layout_alignParentRight="true"
+                  android:orientation="vertical"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content">
+
+        <TextView android:id="@+id/position"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:textColor="#666666"
+                  android:textSize="16sp" />
+
+        <TextView android:id="@+id/status"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:textColor="#666666"
+                  android:textSize="16sp" />
+    </LinearLayout>
+
+</RelativeLayout>
