@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/title_height"
+                android:background="@color/nav_color" >
+
+    <ImageButton
+        android:id="@+id/nav_cd_home"
+        android:layout_width="@dimen/title_height"
+        android:layout_height="@dimen/title_height"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/nav_cd_back" />
+
+    <TextView
+        android:id="@+id/clientName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:textColor="@color/customerdetail_title"
+        android:textSize="@dimen/title_txt_size" />
+
+    <ImageButton
+        android:id="@+id/imgbtn_more"
+        android:layout_width="@dimen/title_height"
+        android:layout_height="@dimen/title_height"
+        android:layout_alignParentRight="true"
+        android:background="#00000000"
+        android:src="@drawable/nav_more" />
+
+</RelativeLayout>

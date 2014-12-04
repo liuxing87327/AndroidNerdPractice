@@ -1,0 +1,103 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <style name="ButtonGreen" parent="@android:style/Widget.Button">
+        <item name="android:textSize">18.0sp</item>
+        <item name="android:textColor">@drawable/skin_color_button</item>
+        <item name="android:background">@drawable/common_btn_green</item>
+    </style>
+
+    <style name="ButtonRed" parent="@android:style/Widget.Button">
+        <item name="android:textSize">18.0sp</item>
+        <item name="android:textColor">@drawable/skin_color_button</item>
+        <item name="android:background">@drawable/common_btn_red</item>
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+        <item name="android:windowNoTitle">true</item> <!-- 设置没有标题 -->
+        <!-- 设置activity切换动画 -->
+        <item name="android:windowAnimationStyle">@style/activityAnimation</item>
+    </style>
+
+    <style name="AnimationPreview">
+        <item name="android:windowEnterAnimation">@anim/fade_in</item>
+        <item name="android:windowExitAnimation">@anim/fade_out</item>
+    </style>
+
+    <style name="activityAnimation" parent="@android:style/Animation">
+        <item name="android:activityOpenEnterAnimation">@anim/slide_right_in</item>
+        <item name="android:activityOpenExitAnimation">@anim/slide_left_out</item>
+        <item name="android:activityCloseEnterAnimation">@anim/slide_left_in</item>
+        <item name="android:activityCloseExitAnimation">@anim/slide_right_out</item>
+    </style>
+
+    <style name="PopupAnimation" mce_bogus="1" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/popup_up</item>
+        <item name="android:windowExitAnimation">@anim/popup_down</item>
+    </style>
+
+    <style name="customProgressDialog">
+        <item name="android:windowFrame">@null</item> <!-- 边框 -->
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowIsTranslucent">true</item> <!-- 半透明 -->
+        <item name="android:windowNoTitle">true</item> <!-- 无标题 -->
+        <item name="android:windowBackground">@color/translucent</item> <!-- 背景透明 -->
+        <item name="android:backgroundDimEnabled">false</item> <!-- 模糊 -->
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+    </style>
+
+    <!-- 版本更新progressbar -->
+    <style name="progressbarStyle_Horizontal_Red" parent="android:Widget.ProgressBar.Horizontal">
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:progressDrawable">@drawable/dooioo_update_dlg_download_prgb</item>
+        <item name="android:minHeight">9dp</item>
+        <item name="android:maxHeight">9dp</item>
+    </style>
+
+    <style name="radio_btn">
+        <item name="android:textSize">14sp</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:background">#00000000</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:button">@null</item>
+        <item name="android:textColor">@drawable/selector_menu_text_bg</item>
+        <item name="android:layout_weight">1.0</item>
+        <item name="android:paddingBottom">4dp</item>
+        <item name="android:paddingTop">4dp</item>
+    </style>
+
+    <style name="small_ratingbar" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/small_rating_progress_selector</item>
+        <item name="android:minHeight">18dip</item>
+        <item name="android:maxHeight">18dip</item>
+    </style>
+
+    <style name="house_tab">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColor">@color/tab_text_color</item>
+    </style>
+<!--         <item name="android:background">@color/tab_bg_color</item> -->
+
+</resources>

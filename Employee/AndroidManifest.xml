@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.dooioo.criminalIntent"
+          android:versionCode="1"
+          android:versionName="1.0">
+
+    <supports-screens
+            android:anyDensity="true"
+            android:largeScreens="true"
+            android:normalScreens="true"
+            android:resizeable="true"
+            android:smallScreens="true" />
+
+    <uses-sdk android:minSdkVersion="17"/>
+
+    <application
+            android:allowBackup="true"
+            android:icon="@drawable/ic_launcher"
+            android:label="@string/app_name"
+            android:largeHeap="true"
+            android:persistent="true"
+            android:theme="@style/AppTheme" >
+        <uses-library android:name="android.test.runner" />
+
+        <activity android:name=".activity.EmployeeQueryActivity"
+                  android:theme="@style/AppTheme"
+                  android:label="@string/app_employee">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".activity.EmployeeDetailActivity"
+                  android:theme="@style/AppTheme"
+                  android:label="@string/app_employee_detail" />
+
+        <activity android:name=".activity.EmployeeEditActivity"
+                  android:theme="@style/AppTheme"
+                  android:label="@string/app_employee_edit" />
+
+        <activity android:name=".activity.EmployeeAddActivity"
+                  android:theme="@style/AppTheme"
+                  android:label="@string/app_employee_add" />
+    </application>
+    <uses-permission android:name="android.permission.INTERNET" />
+</manifest>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent" >
+
+    <include android:id="@+id/query_head"
+             android:layout_alignParentTop="true"
+             layout="@layout/employee_add_head"/>
+
+    <RelativeLayout android:id="@+id/query_keyword"
+                    android:layout_marginTop="5dp"
+                    android:layout_below="@id/query_head"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+        <EditText android:id="@+id/keyword"
+                  android:layout_width="204dp"
+                  android:layout_height="wrap_content"
+                  android:hint="@string/crime_title_hint"
+                  android:layout_weight="0.72"
+                  android:layout_marginLeft="5dp"
+                  android:layout_marginRight="5dp"/>
+
+        <Button android:layout_toRightOf="@id/keyword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="查询"
+                android:id="@+id/queryApi" android:layout_alignParentEnd="true" android:layout_marginRight="5dp"/>
+    </RelativeLayout>
+
+    <Spinner android:id="@+id/status"
+             android:layout_below="@id/query_keyword"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:drawSelectorOnTop="true"
+             android:prompt="@string/status_prompt"
+             android:entries="@array/status"
+             android:layout_marginLeft="5dp" android:layout_marginRight="5dp"/>
+
+    <LinearLayout android:layout_below="@id/status"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content" android:id="@+id/linearLayout2">
+
+        <EditText android:layout_alignParentLeft="true"
+                  android:id="@+id/dateFrom"
+                android:layout_weight="1"
+                android:hint="@string/employee_dateFrom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginLeft="5dp"/>
+
+        <TextView android:layout_centerInParent="true"
+                  android:layout_width="39dp"
+                  android:layout_height="wrap_content"
+                  android:gravity="center"
+                  android:text="-"/>
+
+        <EditText android:layout_alignParentRight="true"
+                  android:id="@+id/dateTo"
+                android:layout_weight="1"
+                android:hint="@string/employee_dateTo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginRight="5dp"/>
+
+    </LinearLayout>
+
+    <ListView android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/listView"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp" android:layout_below="@+id/linearLayout2"/>
+
+</RelativeLayout>

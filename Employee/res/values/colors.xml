@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="gesture_background">#ff303237</color>
+    <color name="color_hei_8">#00000000</color>
+    <color name="blue">#ff75a6ff</color>
+    <color name="translucence">#ff4e4752</color>
+
+    <!-- ITEM 点击色 -->
+    <color name="j_lightgray">#E8E8E8</color>
+    <!-- item 分割线 -->
+    <color name="j_divider">#E3E3E3</color>
+    <!-- 整体背景色 -->
+    <color name="c_bg">#f3f3f3</color>
+
+    <drawable name="trans">@color/color_hei_8</drawable>
+
+    <color name="background_tab_pressed">#6633B5E5</color>
+    <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
+    <color name="red">#e75543</color>
+    <color name="orange">#eeb866</color>
+    <color name="green">#87d184</color>
+    <color name="pop_d">#E6959595</color>
+    <color name="pop_p">#625a5a</color>
+    <color name="cccccc">#55959595</color>
+    <color name="divider">#99959595</color>
+    <color name="translucent">#b0000000</color>
+    <color name="listitem_gray">#ff9da19e</color>
+    <color name="listitem_black">#ff000000</color>
+
+    <!-- 登录 -->
+    <color name="login_bg">#ebe9dd</color>
+    <color name="login_hint">#dfdfdf</color>
+    <color name="login_btn">#333333</color>
+
+    <!-- nav -->
+    <color name="nav_color">#e75543</color>
+    <color name="left_nav_color">#3a353a</color>
+
+    <!-- menu -->
+    <color name="menu_text">#ebe9dd</color>
+    <color name="menu_up_splitor">#282528</color>
+    <color name="menu_down_splitor">#494549</color>
+
+    <!-- 客户列表 -->
+    <color name="customerlist_splitor">#e5e5e5</color>
+    <color name="customerlist_name">#333333</color>
+    <color name="customerlist_info">#999999</color>
+
+    <!-- 添加客户 -->
+    <color name="priceHint">#aeaeae</color>
+    <!-- F9F863  fcf8e3 -->
+    <color name="yellowHint">#F9F863</color>
+
+    <!-- 客户详情 -->
+    <color name="customerdetail_title">#ffffff</color>
+    <color name="cd_tab_red">#e75543</color>
+    <color name="cd_tab_black">#333333</color>
+    <color name="cd_bg">#ebe9dd</color>
+    <color name="cd_tag">#959595</color>
+    <color name="cd_divider">#dcdcdc</color>
+    <color name="cd_foot">#f8f7f7</color>
+    <color name="cd_lastPreserve">#e75543</color>
+    <color name="tab_press">#dcdcdc</color>
+    <color name="cd_foot_press">#999999</color>
+
+    <!-- 配盘 -->
+    <color name="ph_head">#3f373f</color>
+    <color name="ph_bg">#4c424c</color>
+    <color name="linecolor">#c1c1c1</color>
+    <color name="redbtn">#ed887b</color>
+
+    <!-- 更多页面 -->
+    <color name="moreBg">#f8f7f7</color>
+
+    <!-- 房源标签的颜色 -->
+    <color name="tab_text_color">#ff969696</color>
+    <color name="tab_text_selected_color">#ffe75543</color>
+    <color name="tab_bg_color">@color/white</color>
+    <color name="tab_bg_selected_color">#d5d5d5</color>
+    <color name="header_layer">#7F000000</color>
+
+</resources>

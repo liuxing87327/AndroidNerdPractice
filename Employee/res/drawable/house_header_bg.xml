@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item android:drawable="@drawable/jing_pin_bg_2">
+    </item>
+    <item android:drawable="@color/header_layer">
+    </item>
+
+</layer-list>

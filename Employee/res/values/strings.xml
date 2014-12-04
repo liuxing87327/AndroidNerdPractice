@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_crimeListActivity">app_crimeListActivity</string>
+    <string name="app_employeeListActivity">app_employeeListActivity</string>
+    <string name="app_crimeActivity">app_crimeActivity</string>
+
+    <string name="app_employee">员工列表</string>
+    <string name="app_employee_detail">员工详情</string>
+    <string name="app_employee_edit">信息编辑</string>
+
+    <string name="app_name">员工管理</string>
+    <string name="title_activity_crime">CrimeActivity</string>
+    <string name="crime_title_hint">请输入关键字</string>
+    <string name="crime_title_label">标题</string>
+    <string name="crime_details_label">时间</string>
+    <string name="crime_solved_label">已解决？</string>
+    <string name="crime_title">Crimes</string>
+    <string name="employee_title">员工列表</string>
+
+    <string name="employee_dateFrom">开始时间</string>
+    <string name="employee_dateTo">结束时间</string>
+
+    <string name="status_prompt">请选择状态</string>
+    <string name="app_employee_add">新增员工</string>
+
+    <string name="text_btn_init">百度账号绑定</string>
+    <string name="text_btn_init1">更换百度账号</string>
+    <string name="log_tip">日志：</string>
+    <string name="clear_log">清除日志</string>
+    <string name="text_btn_rich">富媒体消息</string>
+    <string name="text_btn_initAK">无账号绑定</string>
+    <string name="text_btn_setTags">设置标签</string>
+    <string name="text_btn_delTags">删除标签</string>
+    <string name="text_btn_senior">高级功能</string>
+    <string name="text_btn_set">设置</string>
+    <string name="text_media_title">富媒体消息列表</string>
+    <string name="version_introduce">\n1.支持网络客来电显示\n2.支持同事来电显示</string>
+    <string name="media">Rich Media</string>
+    <string name="custom_text_hint">用户自定义行为打开的Activity</string>
+    <string name="tags_hint">请输入多个标签，以英文逗号隔开</string>
+    <string name="search_label">搜索</string>
+    <string name="search_hint">输入楼盘名称</string>
+    <string name="settings_description">搜索设置</string>
+    <string name="no_data">查询无数据</string>
+    <string name="loading_error">数据更新中，请稍候重试&#8230;</string>
+    <string name="rb_s_0">动态</string>
+    <string name="airplancemode">飞行模式,不能拨打电话</string>
+    <string name="callerror">拨打报错了</string>
+    <string name="rb_s_1">消息</string>
+    <string name="rb_s_2">客源</string>
+    <string name="rb_s_3">房源</string>
+    <string name="rb_s_4">更多</string>
+    <string name="tool_box">工具箱</string>
+    <string name="about">关于</string>
+    <string name="quick_call">一键快拨</string>
+    <string name="sub_title_quick_clicked">立即看点击消息</string>
+
+    <!-- APP -->
+    <string name="appServerUrl">http://112.124.27.35:9090/</string>
+    <string name="apiServerUrl">http://112.124.27.35:9090/route/rest</string>
+    <string name="cachePath">/MyClientCache/</string>
+    <string name="telExtPrefix">02151903047,</string>
+    <string name="errcode_success">发送成功</string>
+    <string name="errcode_cancel">发送取消</string>
+    <string name="errcode_deny">发送被拒绝</string>
+    <string name="errcode_unknown">发送返回</string>
+    <string name="no_contact">暂无联系方式</string>
+    <string name="loading2">努力加载同事中&#8230;</string>
+    <string name="private_house">此房源为私盘，您无权联系该业主，请联系私盘方。</string>
+    <string name="anti_harassment">该业主已被设为“防骚扰”，无法获取号码，详情请查看后台房源。</string>
+    <string name="set_safe_client">设为保护客</string>
+    <string name="have_no_available_info">没有可发送的信息。</string>
+    <string name="please_install_wechat">请先安装微信。</string>
+    <string name="get_url_fail">获取房源链接失败，请返回重试。</string>
+    <string name="send_type_error">分享类型错误</string>
+    <string name="please_choice_one_picture">请至少选择一张图片!</string>
+    <string name="set_public_client">设为公客</string>
+    <string name="set_public_reason">请选择踢公原因</string>
+    <string name="et_additional_reason_hint">请输入其他补充跟进内容，非必填</string>
+    <string name="please_choice_one_reason">请选择一个原因</string>
+    <string name="set_public_client_success">设为公客成功</string>
+    <string name="signin_prompt">当前登录信息已过期，需重新登录。</string>
+
+    <!-- 版本更新 -->
+    <string name="update">升级</string>
+    <string name="later">稍后再说</string>
+    <string name="loading">正在下载&#8230;</string>
+
+    <string name="lockpattern_recording_intro_header">"为保障账户安全，请绘制解锁图案"</string>
+    <string name="lockpattern_recording_inprogress">"完成后松开手指"</string>
+    <!--     <string name="lockpattern_pattern_entered_header">"图案已记录"</string> -->
+    <string name="lockpattern_pattern_entered_header">""</string>
+    <string name="lockpattern_need_to_confirm">"请再次绘制解锁图案"</string>
+    <!--     <string name="lockpattern_recording_inprogress">"完成后松开手指"</string> -->
+    <!--     <string name="lockpattern_pattern_confirmed_header">"确认保存新解锁图案"</string> -->
+    <string name="lockpattern_pattern_confirmed_header">""</string>
+
+    <string name="lockscreen_access_pattern_start">"开始绘制图案"</string>
+    <string name="lockscreen_access_pattern_cleared">"图案已清除"</string>
+    <string name="lockscreen_access_pattern_cell_added">"已添加单元格"</string>
+    <string name="lockscreen_access_pattern_detected">"图案绘制完成"</string>
+    <string name="lockpattern_retry_button_text">"重试"</string>
+    <string name="lockpattern_continue_button_text">"继续"</string>
+    <string name="lockpattern_confirm_button_text">"确认"</string>
+    <string name="lockpattern_settings_help_how_to_record">"如何绘制解锁图案"</string>
+    <string name="lockpattern_recording_incorrect_too_short">"至少连接4个点，请重试"</string>
+    <string name="lockpattern_need_to_unlock_wrong">"与上次绘制不一样，请重新绘制"</string>
+    <string name="gesture_password_guide_text">你需要创建一个解锁图案，这样他人在借用你的手机时，将无法打开应用。</string>
+    <string name="gesture_password_guide_creat_btn">创建手势密码</string>
+
+    <!-- menu -->
+    <string name="newhouse_contact">新房通讯录</string>
+    <string name="tradecenter_contact">交易中心通讯录</string>
+    <string name="more">更多</string>
+    <string name="message">消息</string>
+
+    <!-- 下拉刷新 -->
+    <string name="pull_to_refresh_pull_label">下拉刷新&#8230;</string>
+    <string name="pull_to_refresh_release_label">松开即可刷新&#8230;</string>
+    <string name="pull_to_refresh_refreshing_label">加载中&#8230;</string>
+    <string name="pull_to_refresh_tap_label">点击刷新&#8230;</string>
+    <string name="xlistview_header_hint_normal">下拉刷新</string>
+    <string name="xlistview_header_hint_ready">松开刷新</string>
+    <string name="xlistview_header_hint_loading">正在加载</string>
+    <string name="xlistview_header_last_time">上次更新时间：</string>
+    <string name="xlistview_footer_hint_normal">查看更多</string>
+    <string name="xlistview_footer_hint_ready">松开载入更多</string>
+    <string name="gen_msg_faild_because_more_pics">当前网络不给力，生成立即看内容失败，请尝试少选几张图片。</string>
+    <string name="gen_msg_faild">当前网络不给力，生成立即看内容失败，请稍后重试。</string>
+    <string name="no_new_msg">暂时没有新消息</string>
+    <string name="connect_time_out_ex">网络连接超时，请检查网络后重试。</string>
+    <string name="have_no_trade_center_contacts">暂无交易中心通讯录数据</string>
+    <string name="have_no_dynamic">暂无动态</string>
+    <string name="have_no_new_house_contacts">暂无新房通讯录数据</string>
+
+    <!-- 客户列表 -->
+    <string name="cl_remark">备注：</string>
+    <string name="noClient">还没有私客，点击右上角“+”添加</string>
+
+    <!-- 登录 -->
+    <string name="login">登录</string>
+    <string name="empno">工号</string>
+    <string name="pwd">密码</string>
+    <string name="companylogo">德佑地产</string>
+    <string name="secureHint">安全提示</string>
+    <string name="login_hint">请勿在他人手机上登录您的账号，以免重要信息泄露。</string>
+    <string name="loginfail_hint">用户名或密码不能为空</string>
+    <string name="login_fail">工号或密码错误，请重试。</string>
+    <string name="invalid_host">请求链接无效。</string>
+    <string name="login_nonet">网络连接异常，请检查后重试。</string>
+    <string name="login_crush">登录失败，请重试</string>
+
+    <!-- 添加客户 -->
+    <string name="addCustomer">添加客户</string>
+    <string name="ac_name">姓名/称呼</string>
+    <string name="phonenumber">电话号码</string>
+    <string name="grade">级别</string>
+    <string name="gradeA">A级</string>
+    <string name="gradeB">B级</string>
+    <string name="gradeC">C级</string>
+    <string name="fillRemark">填写备注</string>
+    <string name="fillPrice">填写价格</string>
+    <string name="selectDistrict">选择区域</string>
+    <string name="selectHousetype">选择房型</string>
+    <string name="toBuy">求购</string>
+    <string name="toRent">求租</string>
+    <string name="priceMin">最低价格</string>
+    <string name="priceMax">最高价格</string>
+    <string name="rentUnitName">元/月</string>
+    <string name="unitName">万</string>
+
+    <!-- 客户详情 -->
+    <string name="findNoClient">查不到该客户</string>
+    <string name="customerdetail">客户详情</string>
+    <string name="baseinfo">基本信息</string>
+    <string name="status">状态</string>
+    <string name="price">价格</string>
+    <string name="housetype">房型</string>
+    <string name="usage">用途</string>
+    <string name="district">区域</string>
+    <string name="remark">备注</string>
+    <string name="lockClient">保护客</string>
+    <string name="cd_lastPreserve1">有效维护于</string>
+    <string name="cd_lastPreserve2">天前</string>
+    <string name="cd_sendQuickView">在此发送立即看</string>
+    <string name="call">打电话</string>
+    <string name="sendMsg">发短信</string>
+    <string name="cancel">取消</string>
+
+    <!-- 配盘 -->
+    <string name="pickhouse">配盘</string>
+    <string name="ph_guide1">在电脑上打开房源详情页面</string>
+    <string name="ph_guide2">轻敲键盘空格键</string>
+    <string name="noPickHouse">还没给客户配盘，点击右上角“+”添加</string>
+
+    <!-- 跟进 -->
+    <string name="followup">跟进</string>
+    <string name="recentfollowup">近期跟进</string>
+    <string name="writefollowup">填写跟进</string>
+    <string name="followupcontent">请填写跟进备注</string>
+    <string name="confirm">确定</string>
+    <string name="noFollowup">暂无跟进</string>
+
+    <!-- 房源详情 -->
+    <string name="housedetail">房源详情</string>
+
+    <!-- 发送立即看 -->
+    <string name="qvByMsg">短信推房</string>
+    <string name="qvByWX">微信推房</string>
+    <string name="wechat_friend_share">微信朋友圈分享</string>
+
+    <!-- 更多页面 -->
+    <string name="newHouseAddr">新房通讯录</string>
+    <string name="tradeCenterAddr">交易中心通讯录</string>
+    <string name="dooiooAddr">德佑通讯录</string>
+    <string name="toFeedBack">我要反馈</string>
+    <string name="serviceCall">51697676,800</string>
+    <string name="serviceCallGuide">客服电话：51697676-800</string>
+    <string name="aboutApp">关于移动德佑</string>
+    <string name="exit">退出登录</string>
+
+    <!-- 新房通讯录 -->
+    <string name="nhEmployee">代理专员</string>
+    <string name="nhReceptionist">案场接待</string>
+    <string name="nhAssist">协助人</string>
+
+    <!-- 反馈 -->
+    <string name="feedbackHint">请输入您的宝贵意见</string>
+    <!-- 选择通话记录 -->
+    <string name="selectContactsLog">通话记录</string>
+    <string name="yesterday">昨天</string>
+    <string name="nullphonenumber">号码为空,不能打哦@@</string>
+    <string name="quick_call_prompt">电脑打开房源/公客详情页\n轻敲键盘C键</string>
+    <string name="net_guest">网络客户</string>
+    <string name="tickerText">移动德佑有新版本</string>
+    <string name="contentText">移动德佑有新版本</string>
+    <string name="developing">努力开发中&#8230;</string>
+    <string name="in_product_design">产品设计中&#8230;</string>
+
+</resources>

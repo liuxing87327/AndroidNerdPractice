@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string-array name="status">
+        <item>试用</item>
+        <item>正式</item>
+        <item>离职</item>
+    </string-array>
+
+    <string-array name="orgName">
+        <item>开发1组</item>
+        <item>开发2组</item>
+        <item>开发3组</item>
+        <item>开发4组</item>
+    </string-array>
+
+    <string-array name="position">
+        <item>软件工程师</item>
+        <item>系统架构师</item>
+        <item>产品经理</item>
+        <item>前端工程师</item>
+        <item>UI设计师</item>
+    </string-array>
+
+</resources>

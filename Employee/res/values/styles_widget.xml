@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <style name="AddClientItemTextView">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textSize">15sp</item>
+	    <item name="android:textColor">@color/cd_tab_black</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+    
+    <style name="AddClientItemEditText" parent="AddClientItemTextView">
+        <item name="android:textColorHint">@color/cd_tag</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+    
+    <style name="DistrictTextView">
+        <item name="android:textSize">15sp</item>
+	    <item name="android:textColor">@color/cd_tab_black</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+    
+    <style name="HouseDetailTextView">
+        <item name="android:textSize">15sp</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="HouseDetailTag" parent="HouseDetailTextView">
+	    <item name="android:textColor">@color/cd_tag</item>
+    </style>
+    
+    <style name="HouseDetailContent" parent="HouseDetailTextView">
+	    <item name="android:textColor">@color/cd_tab_black</item>
+    </style>
+    
+</resources>
